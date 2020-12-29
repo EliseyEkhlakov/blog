@@ -5,7 +5,7 @@ import { ListGroup } from 'reactstrap';
 
 import '../../css/post-list.css';
 
-const PostList = ({posts, onAppDelete}) => {
+const PostList = ({posts, onAppDelete, onToggleImportant, onToggleLiked}) => {
     
     const elements = posts.map((item) => {
         const {id, ...itemProps} = item;
@@ -13,7 +13,9 @@ const PostList = ({posts, onAppDelete}) => {
             <li key={id} className="list-group-item">
                 <PostListItem 
                     {...itemProps}
-                    onDelete={() => onAppDelete(id)}/>
+                    onDelete={() => onAppDelete(id)}
+                    onToggleImportant={() => onToggleImportant(id)}
+                    onToggleLiked={() => onToggleLiked(id)}/>
             </li>
         )
     });
