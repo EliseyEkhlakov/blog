@@ -18,7 +18,7 @@ const Header = styled.div`
         font-size: 1.2rem;
         color: grey;
     }
-`
+`;
 
 const AppHeader = () => {
     return (
